@@ -21,6 +21,10 @@ def filter_genes(matrix, min_counts, min_cells, max_counts, max_cells, rows_per_
     """
 
     def filtering_values(row_data, common_genes_counter, min_counts, min_cells, max_counts, max_cells):
+        """
+        Filtering values by sparse gene expressions matrix
+        :return: common_genes_counter: dict, dictionary with segments by values and by cells counts
+        """
 
         common_genes_counter['segment_by_counts'] = cp.concatenate(
             [common_genes_counter['segment_by_counts'],
