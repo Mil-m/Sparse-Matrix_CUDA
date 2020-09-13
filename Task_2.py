@@ -6,7 +6,8 @@ import numpy as np
 from collections import Counter
 
 
-def filter_genes(matrix, min_counts, min_cells, max_counts, max_cells, rows_per_batch=10000):
+def filter_genes(matrix: scipy.sparse.csr.csr_matrix, min_counts: int, min_cells: int, max_counts: int, max_cells: int,
+                 rows_per_batch: int = 10000) -> dict:
     """
     Creation dictionary with segments by values and by cells counts filtered by sparse gene expressions matrix
 
@@ -20,7 +21,8 @@ def filter_genes(matrix, min_counts, min_cells, max_counts, max_cells, rows_per_
     :return: common_genes_counter: dict, dictionary with segments by values and by cells counts
     """
 
-    def filtering_values(row_data, common_genes_counter, min_counts, min_cells, max_counts, max_cells):
+    def filtering_values(row_data: cp.core.core.ndarray, common_genes_counter: dict, min_counts: int, min_cells: int,
+                         max_counts: int, max_cells: int) -> dict:
         """
         Filtering values by sparse gene expressions matrix
         :return: common_genes_counter: dict, dictionary with segments by values and by cells counts
