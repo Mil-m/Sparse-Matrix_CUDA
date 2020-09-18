@@ -1,7 +1,6 @@
 import scipy
 import math
 import cupy as cp
-import cudf
 import numpy as np
 from collections import Counter
 
